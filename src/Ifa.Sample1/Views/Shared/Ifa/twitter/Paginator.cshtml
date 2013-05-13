@@ -1,0 +1,13 @@
+﻿@using Ifa.Helpers
+@using Ifa.Model
+@model IEnumerable<Tag>
+<div class="pagination">
+    <ul>
+        @foreach (var tag in Model
+            .RemoveTagsByType(typeof(FirstPage),
+            typeof(LastPage),
+            typeof(Gap))) { 
+            @Html.DisplayForTheme(tag)
+        }
+    </ul>
+</div>
